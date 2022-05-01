@@ -1,0 +1,8 @@
+﻿[v1.0]
+
+- .zip file support
+- Map (inner) file extension with core
+OK - optional: location of ROM patch (IPS, UPS, BPS)
+OK - save/restore via XML
+OK - check Args for files (decide if ROM, Patch or RetroArch)
+OK - Drag/Drop files to ROM, Patch or RetroArch location
