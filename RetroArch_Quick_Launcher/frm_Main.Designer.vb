@@ -114,7 +114,6 @@
         Me.cmb_Libretro_Core.Properties.DataSource = Me.BS_Libretro_Cores
         Me.cmb_Libretro_Core.Properties.DisplayMember = "Displayname"
         Me.cmb_Libretro_Core.Properties.NullText = ""
-        Me.cmb_Libretro_Core.Properties.ShowFooter = False
         Me.cmb_Libretro_Core.Properties.ShowHeader = False
         Me.cmb_Libretro_Core.Properties.ValueMember = "DLL"
         Me.cmb_Libretro_Core.Size = New System.Drawing.Size(465, 20)
@@ -243,7 +242,6 @@
         Me.cmb_Retroarch_Shader.Properties.DataSource = Me.BS_Shader
         Me.cmb_Retroarch_Shader.Properties.DisplayMember = "Path"
         Me.cmb_Retroarch_Shader.Properties.NullText = ""
-        Me.cmb_Retroarch_Shader.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.OnlyInPopup
         Me.cmb_Retroarch_Shader.Properties.ShowHeader = False
         Me.cmb_Retroarch_Shader.Properties.ValueMember = "Path"
         Me.cmb_Retroarch_Shader.Size = New System.Drawing.Size(465, 20)
