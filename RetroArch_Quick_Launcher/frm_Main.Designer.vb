@@ -467,7 +467,7 @@
         Me.MinimumSize = New System.Drawing.Size(500, 200)
         Me.Name = "frm_Main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "RetroArch Quick Launcher v1.1.1 by MK2k"
+        Me.Text = "RetroArch Quick Launcher v1.2.0 by MK2k"
         CType(Me.cmb_Libretro_Core.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BS_CurrentConfig, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS, System.ComponentModel.ISupportInitialize).EndInit()
