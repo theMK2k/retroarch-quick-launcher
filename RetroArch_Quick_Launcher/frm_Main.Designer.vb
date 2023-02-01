@@ -125,7 +125,7 @@
         SuperToolTip1.Items.Add(ToolTipTitleItem1)
         SuperToolTip1.Items.Add(ToolTipItem1)
         Me.cmb_Libretro_Core.SuperTip = SuperToolTip1
-        Me.cmb_Libretro_Core.TabIndex = 14
+        Me.cmb_Libretro_Core.TabIndex = 4
         '
         'BS_CurrentConfig
         '
@@ -210,7 +210,7 @@
         SuperToolTip4.Items.Add(ToolTipItem4)
         SuperToolTip4.Items.Add(ToolTipTitleItem5)
         Me.txb_RetroArch_Location.SuperTip = SuperToolTip4
-        Me.txb_RetroArch_Location.TabIndex = 16
+        Me.txb_RetroArch_Location.TabIndex = 3
         '
         'btn_Browse_RetroArch
         '
@@ -252,7 +252,7 @@
         SuperToolTip6.Items.Add(ToolTipTitleItem7)
         SuperToolTip6.Items.Add(ToolTipItem6)
         Me.cmb_Retroarch_Shader.SuperTip = SuperToolTip6
-        Me.cmb_Retroarch_Shader.TabIndex = 21
+        Me.cmb_Retroarch_Shader.TabIndex = 5
         '
         'BS_Shader
         '
@@ -323,7 +323,7 @@
         SuperToolTip9.Items.Add(ToolTipItem9)
         SuperToolTip9.Items.Add(ToolTipTitleItem11)
         Me.txb_Game_Location.SuperTip = SuperToolTip9
-        Me.txb_Game_Location.TabIndex = 22
+        Me.txb_Game_Location.TabIndex = 2
         '
         'btn_Browse_Game
         '
@@ -395,7 +395,7 @@
         SuperToolTip13.Items.Add(ToolTipItem13)
         SuperToolTip13.Items.Add(ToolTipTitleItem16)
         Me.txb_Patch_Location.SuperTip = SuperToolTip13
-        Me.txb_Patch_Location.TabIndex = 25
+        Me.txb_Patch_Location.TabIndex = 6
         '
         'btn_OK
         '
@@ -403,7 +403,7 @@
         Me.btn_OK.Location = New System.Drawing.Point(432, 138)
         Me.btn_OK.Name = "btn_OK"
         Me.btn_OK.Size = New System.Drawing.Size(73, 20)
-        Me.btn_OK.TabIndex = 28
+        Me.btn_OK.TabIndex = 0
         Me.btn_OK.Text = "&OK"
         '
         'btn_Cancel
@@ -412,7 +412,7 @@
         Me.btn_Cancel.Location = New System.Drawing.Point(508, 138)
         Me.btn_Cancel.Name = "btn_Cancel"
         Me.btn_Cancel.Size = New System.Drawing.Size(73, 20)
-        Me.btn_Cancel.TabIndex = 29
+        Me.btn_Cancel.TabIndex = 1
         Me.btn_Cancel.Text = "&Cancel"
         '
         'lbl_Metropolis_Launcher
@@ -434,7 +434,7 @@
     "ll blown game and emulation launcher"
         SuperToolTip14.Items.Add(ToolTipItem14)
         Me.lbl_Metropolis_Launcher.SuperTip = SuperToolTip14
-        Me.lbl_Metropolis_Launcher.TabIndex = 30
+        Me.lbl_Metropolis_Launcher.TabIndex = 7
         Me.lbl_Metropolis_Launcher.Text = "Need a proper gaming frontend? Check out Metropolis Launcher."
         '
         'frm_Main
@@ -467,7 +467,7 @@
         Me.MinimumSize = New System.Drawing.Size(500, 200)
         Me.Name = "frm_Main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "RetroArch Quick Launcher v1.1.0 by MK2k"
+        Me.Text = "RetroArch Quick Launcher v1.1.1 by MK2k"
         CType(Me.cmb_Libretro_Core.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BS_CurrentConfig, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS, System.ComponentModel.ISupportInitialize).EndInit()

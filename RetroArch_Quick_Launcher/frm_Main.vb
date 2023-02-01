@@ -8,13 +8,15 @@ Partial Public Class frm_Main
 	Public dataPath As String = Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%") & "\.retroarch-quick-launcher"
 	Public configPath As String = dataPath & "\" & "config.xml"
 
+    Private launchImmediately As Boolean = False
+
     Shared Sub New()
         DevExpress.UserSkins.BonusSkins.Register()
         DevExpress.Skins.SkinManager.EnableFormSkins()
     End Sub
 
     Public Sub New()
-		InitializeComponent()
+        InitializeComponent()
 
         MKNetDXLib.frm_MKDXBaseForm.Default_Form_Icon = Me.Icon
         MKNetDXLib.cls_MKDXSkin.LoadSkin("DevExpress Dark Style")
@@ -24,10 +26,10 @@ Partial Public Class frm_Main
         End If
 
         If Not Alphaleonis.Win32.Filesystem.Directory.Exists(Me.dataPath) Then
-			MKNetDXLib.cls_MKDXHelper.MessageBox("Unable to create directory '" & dataPath & "'!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-			Me.dataPath = ""
-			Me.configPath = ""
-		End If
+            MKNetDXLib.cls_MKDXHelper.MessageBox("Unable to create directory '" & dataPath & "'!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.dataPath = ""
+            Me.configPath = ""
+        End If
 
         If Alphaleonis.Win32.Filesystem.File.Exists(configPath) Then
             Me.DS.ReadXml(configPath)
@@ -38,12 +40,17 @@ Partial Public Class frm_Main
         Me.BS_CurrentConfig.EndEdit()
 
         Dim cmdArgs = Environment.GetCommandLineArgs()
-		For i As Integer = 1 To cmdArgs.Length - 1
-			Me.ImportFile(cmdArgs(i), enm_ImportFileMode.AUTODETECT)
-		Next
-	End Sub
+        For i As Integer = 1 To cmdArgs.Length - 1
+            If cmdArgs(i) = "--launch-immediately" Then
+                Me.launchImmediately = True
+                Continue For
+            End If
 
-	Public Enum enm_ImportFileMode
+            Me.ImportFile(cmdArgs(i), enm_ImportFileMode.AUTODETECT)
+        Next
+    End Sub
+
+    Public Enum enm_ImportFileMode
 		GAME = 1
 		PATCH = 2
 		AUTODETECT = 3
@@ -414,4 +421,11 @@ Partial Public Class frm_Main
 	Private Sub lbl_Metropolis_Launcher_Click(sender As Object, e As EventArgs) Handles lbl_Metropolis_Launcher.Click
 		Process.Start("https://metropolis-launcher.net")
 	End Sub
+
+    Private Sub frm_Main_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        If Me.launchImmediately Then
+            'Me.Visible = False
+            Me.btn_OK_Click(Me.btn_OK, New EventArgs)
+        End If
+    End Sub
 End Class

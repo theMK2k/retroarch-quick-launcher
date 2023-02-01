@@ -4,6 +4,8 @@
 
 If you choose **RetroArch Quick Launcher** as the default application for your ROM files, you'll see its dialog after double clicking your ROM file and by the press of the **OK** button or simply pressing **ENTER**, RetroArch is launched.
 
+Alternatively choose **RetroArch_Quick_Launcher (launch immediately).bat** as the default application for your ROM files to skip the dialog and directly launch the ROM file. If something isn't set up correctly (e.g. Libretro Core not selected), the dialog will not be skipped.
+
 ![screenshot of RetroArch Quick Launcher's dialog](docs/screenshot.png "Title")
 
 ## Installation
