@@ -67,17 +67,21 @@
         Dim ToolTipTitleItem16 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
         Dim SuperToolTip14 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
         Dim ToolTipItem14 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip15 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem17 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem15 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim ToolTipTitleItem18 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim SuperToolTip16 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem19 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem16 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim ToolTipTitleItem20 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Main))
         Me.cmb_Libretro_Core = New MKNetDXLib.ctl_MKDXLookupEdit()
-        Me.BS_CurrentConfig = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DS = New RetroArch_Quick_Launcher.DS_RetroArch_Quick_Launcher()
-        Me.BS_Libretro_Cores = New System.Windows.Forms.BindingSource(Me.components)
         Me.lbl_Libretro_Core = New MKNetDXLib.ctl_MKDXLabel()
         Me.lbl_Executable = New MKNetDXLib.ctl_MKDXLabel()
         Me.txb_RetroArch_Location = New MKNetDXLib.ctl_MKDXTextEdit()
         Me.btn_Browse_RetroArch = New MKNetDXLib.ctl_MKDXSimpleButton()
         Me.cmb_Retroarch_Shader = New MKNetDXLib.ctl_MKDXLookupEdit()
-        Me.BS_Shader = New System.Windows.Forms.BindingSource(Me.components)
         Me.lbl_Retroarch_Shader = New MKNetDXLib.ctl_MKDXLabel()
         Me.lbl_Game_Location = New MKNetDXLib.ctl_MKDXLabel()
         Me.txb_Game_Location = New MKNetDXLib.ctl_MKDXTextEdit()
@@ -88,15 +92,22 @@
         Me.btn_OK = New MKNetDXLib.ctl_MKDXSimpleButton()
         Me.btn_Cancel = New MKNetDXLib.ctl_MKDXSimpleButton()
         Me.lbl_Metropolis_Launcher = New MKNetDXLib.ctl_MKDXLabel()
+        Me.BS_CurrentConfig = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DS = New RetroArch_Quick_Launcher.DS_RetroArch_Quick_Launcher()
+        Me.BS_Shader = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BS_Libretro_Cores = New System.Windows.Forms.BindingSource(Me.components)
+        Me.lbl_LaunchImmediately = New MKNetDXLib.ctl_MKDXLabel()
+        Me.chb_LaunchImmediately = New MKNetDXLib.ctl_MKDXCheckEdit()
         CType(Me.cmb_Libretro_Core.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BS_CurrentConfig, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BS_Libretro_Cores, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txb_RetroArch_Location.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmb_Retroarch_Shader.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BS_Shader, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txb_Game_Location.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txb_Patch_Location.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BS_CurrentConfig, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DS, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BS_Shader, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BS_Libretro_Cores, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chb_LaunchImmediately.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmb_Libretro_Core
@@ -104,7 +115,7 @@
         Me.cmb_Libretro_Core.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmb_Libretro_Core.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.BS_CurrentConfig, "Libretro_Core", True))
-        Me.cmb_Libretro_Core.Location = New System.Drawing.Point(116, 49)
+        Me.cmb_Libretro_Core.Location = New System.Drawing.Point(118, 49)
         Me.cmb_Libretro_Core.MKBoundLabel = Nothing
         Me.cmb_Libretro_Core.MKEditValue_Compare = Nothing
         Me.cmb_Libretro_Core.Name = "cmb_Libretro_Core"
@@ -116,7 +127,7 @@
         Me.cmb_Libretro_Core.Properties.NullText = ""
         Me.cmb_Libretro_Core.Properties.ShowHeader = False
         Me.cmb_Libretro_Core.Properties.ValueMember = "DLL"
-        Me.cmb_Libretro_Core.Size = New System.Drawing.Size(465, 20)
+        Me.cmb_Libretro_Core.Size = New System.Drawing.Size(463, 20)
         ToolTipTitleItem1.Text = "Libretro Core"
         ToolTipItem1.LeftIndent = 6
         ToolTipItem1.Text = "Select here the Libretro Core to be used." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "All cores in this list are found in " &
@@ -126,22 +137,6 @@
         SuperToolTip1.Items.Add(ToolTipItem1)
         Me.cmb_Libretro_Core.SuperTip = SuperToolTip1
         Me.cmb_Libretro_Core.TabIndex = 4
-        '
-        'BS_CurrentConfig
-        '
-        Me.BS_CurrentConfig.DataMember = "tbl_CurrentConfig"
-        Me.BS_CurrentConfig.DataSource = Me.DS
-        '
-        'DS
-        '
-        Me.DS.DataSetName = "DS_RetroArch_Quick_Launcher"
-        Me.DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'BS_Libretro_Cores
-        '
-        Me.BS_Libretro_Cores.DataMember = "tbl_Libretro_Cores"
-        Me.BS_Libretro_Cores.DataSource = Me.DS
-        Me.BS_Libretro_Cores.Sort = "Displayname"
         '
         'lbl_Libretro_Core
         '
@@ -195,12 +190,12 @@
         Me.txb_RetroArch_Location.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txb_RetroArch_Location.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.BS_CurrentConfig, "RetroArch_Location", True))
-        Me.txb_RetroArch_Location.Location = New System.Drawing.Point(116, 26)
+        Me.txb_RetroArch_Location.Location = New System.Drawing.Point(118, 26)
         Me.txb_RetroArch_Location.MKBoundLabel = Nothing
         Me.txb_RetroArch_Location.MKEditValue_Compare = Nothing
         Me.txb_RetroArch_Location.Name = "txb_RetroArch_Location"
         Me.txb_RetroArch_Location.Properties.ReadOnly = True
-        Me.txb_RetroArch_Location.Size = New System.Drawing.Size(430, 20)
+        Me.txb_RetroArch_Location.Size = New System.Drawing.Size(428, 20)
         ToolTipTitleItem4.Text = "RetroArch Location"
         ToolTipItem4.LeftIndent = 6
         ToolTipItem4.Text = "The location of your RetroArch installation."
@@ -232,7 +227,7 @@
         Me.cmb_Retroarch_Shader.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmb_Retroarch_Shader.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.BS_CurrentConfig, "Shader", True))
-        Me.cmb_Retroarch_Shader.Location = New System.Drawing.Point(116, 72)
+        Me.cmb_Retroarch_Shader.Location = New System.Drawing.Point(118, 72)
         Me.cmb_Retroarch_Shader.MKBoundLabel = Nothing
         Me.cmb_Retroarch_Shader.MKEditValue_Compare = Nothing
         Me.cmb_Retroarch_Shader.Name = "cmb_Retroarch_Shader"
@@ -244,7 +239,7 @@
         Me.cmb_Retroarch_Shader.Properties.NullText = ""
         Me.cmb_Retroarch_Shader.Properties.ShowHeader = False
         Me.cmb_Retroarch_Shader.Properties.ValueMember = "Path"
-        Me.cmb_Retroarch_Shader.Size = New System.Drawing.Size(465, 20)
+        Me.cmb_Retroarch_Shader.Size = New System.Drawing.Size(463, 20)
         ToolTipTitleItem7.Text = "Shader"
         ToolTipItem6.LeftIndent = 6
         ToolTipItem6.Text = "(optional) All shaders in this list are found in the \shaders subdirectory. If th" &
@@ -253,12 +248,6 @@
         SuperToolTip6.Items.Add(ToolTipItem6)
         Me.cmb_Retroarch_Shader.SuperTip = SuperToolTip6
         Me.cmb_Retroarch_Shader.TabIndex = 5
-        '
-        'BS_Shader
-        '
-        Me.BS_Shader.DataMember = "tbl_Shader"
-        Me.BS_Shader.DataSource = Me.DS
-        Me.BS_Shader.Sort = "Path"
         '
         'lbl_Retroarch_Shader
         '
@@ -309,11 +298,11 @@
         Me.txb_Game_Location.AllowDrop = True
         Me.txb_Game_Location.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txb_Game_Location.Location = New System.Drawing.Point(116, 3)
+        Me.txb_Game_Location.Location = New System.Drawing.Point(118, 3)
         Me.txb_Game_Location.MKBoundLabel = Nothing
         Me.txb_Game_Location.MKEditValue_Compare = Nothing
         Me.txb_Game_Location.Name = "txb_Game_Location"
-        Me.txb_Game_Location.Size = New System.Drawing.Size(430, 20)
+        Me.txb_Game_Location.Size = New System.Drawing.Size(428, 20)
         ToolTipTitleItem10.Text = "Game Location"
         ToolTipItem9.LeftIndent = 6
         ToolTipItem9.Text = "The location of the game to be launched."
@@ -381,11 +370,11 @@
         Me.txb_Patch_Location.AllowDrop = True
         Me.txb_Patch_Location.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txb_Patch_Location.Location = New System.Drawing.Point(116, 95)
+        Me.txb_Patch_Location.Location = New System.Drawing.Point(118, 95)
         Me.txb_Patch_Location.MKBoundLabel = Nothing
         Me.txb_Patch_Location.MKEditValue_Compare = Nothing
         Me.txb_Patch_Location.Name = "txb_Patch_Location"
-        Me.txb_Patch_Location.Size = New System.Drawing.Size(430, 20)
+        Me.txb_Patch_Location.Size = New System.Drawing.Size(428, 20)
         ToolTipTitleItem15.Text = "Patch Location"
         ToolTipItem13.LeftIndent = 6
         ToolTipItem13.Text = "(optional) the location of a IPS/UPS/BPS patch"
@@ -400,7 +389,7 @@
         'btn_OK
         '
         Me.btn_OK.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_OK.Location = New System.Drawing.Point(432, 138)
+        Me.btn_OK.Location = New System.Drawing.Point(432, 160)
         Me.btn_OK.Name = "btn_OK"
         Me.btn_OK.Size = New System.Drawing.Size(73, 20)
         Me.btn_OK.TabIndex = 0
@@ -409,7 +398,7 @@
         'btn_Cancel
         '
         Me.btn_Cancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_Cancel.Location = New System.Drawing.Point(508, 138)
+        Me.btn_Cancel.Location = New System.Drawing.Point(508, 160)
         Me.btn_Cancel.Name = "btn_Cancel"
         Me.btn_Cancel.Size = New System.Drawing.Size(73, 20)
         Me.btn_Cancel.TabIndex = 1
@@ -422,7 +411,7 @@
         Me.lbl_Metropolis_Launcher.Appearance.ForeColor = System.Drawing.Color.LightSkyBlue
         Me.lbl_Metropolis_Launcher.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.lbl_Metropolis_Launcher.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lbl_Metropolis_Launcher.Location = New System.Drawing.Point(3, 138)
+        Me.lbl_Metropolis_Launcher.Location = New System.Drawing.Point(3, 160)
         Me.lbl_Metropolis_Launcher.MKBoundControl1 = Nothing
         Me.lbl_Metropolis_Launcher.MKBoundControl2 = Nothing
         Me.lbl_Metropolis_Launcher.MKBoundControl3 = Nothing
@@ -437,12 +426,83 @@
         Me.lbl_Metropolis_Launcher.TabIndex = 7
         Me.lbl_Metropolis_Launcher.Text = "Need a proper gaming frontend? Check out Metropolis Launcher."
         '
+        'BS_CurrentConfig
+        '
+        Me.BS_CurrentConfig.DataMember = "tbl_CurrentConfig"
+        Me.BS_CurrentConfig.DataSource = Me.DS
+        '
+        'DS
+        '
+        Me.DS.DataSetName = "DS_RetroArch_Quick_Launcher"
+        Me.DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BS_Shader
+        '
+        Me.BS_Shader.DataMember = "tbl_Shader"
+        Me.BS_Shader.DataSource = Me.DS
+        Me.BS_Shader.Sort = "Path"
+        '
+        'BS_Libretro_Cores
+        '
+        Me.BS_Libretro_Cores.DataMember = "tbl_Libretro_Cores"
+        Me.BS_Libretro_Cores.DataSource = Me.DS
+        Me.BS_Libretro_Cores.Sort = "Displayname"
+        '
+        'lbl_LaunchImmediately
+        '
+        Me.lbl_LaunchImmediately.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.lbl_LaunchImmediately.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
+        Me.lbl_LaunchImmediately.Location = New System.Drawing.Point(3, 118)
+        Me.lbl_LaunchImmediately.MKBoundControl1 = Nothing
+        Me.lbl_LaunchImmediately.MKBoundControl2 = Nothing
+        Me.lbl_LaunchImmediately.MKBoundControl3 = Nothing
+        Me.lbl_LaunchImmediately.MKBoundControl4 = Nothing
+        Me.lbl_LaunchImmediately.MKBoundControl5 = Nothing
+        Me.lbl_LaunchImmediately.Name = "lbl_LaunchImmediately"
+        Me.lbl_LaunchImmediately.Size = New System.Drawing.Size(112, 20)
+        ToolTipTitleItem17.Text = "Launch Immediately"
+        ToolTipItem15.LeftIndent = 6
+        ToolTipItem15.Text = "Activate this option and the next time a ROM file of the same type will be immedi" &
+    "ately launched with the current settings."
+        ToolTipTitleItem18.LeftIndent = 6
+        ToolTipTitleItem18.Text = "To override this option, hold the SHIFT key while opening RetroArch Quick Launche" &
+    "r with a ROM file."
+        SuperToolTip15.Items.Add(ToolTipTitleItem17)
+        SuperToolTip15.Items.Add(ToolTipItem15)
+        SuperToolTip15.Items.Add(ToolTipTitleItem18)
+        Me.lbl_LaunchImmediately.SuperTip = SuperToolTip15
+        Me.lbl_LaunchImmediately.TabIndex = 28
+        Me.lbl_LaunchImmediately.Text = "Launch Immediately:"
+        '
+        'chb_LaunchImmediately
+        '
+        Me.chb_LaunchImmediately.Location = New System.Drawing.Point(118, 119)
+        Me.chb_LaunchImmediately.MKBoundLabel = Nothing
+        Me.chb_LaunchImmediately.MKEditValue_Compare = Nothing
+        Me.chb_LaunchImmediately.Name = "chb_LaunchImmediately"
+        Me.chb_LaunchImmediately.Properties.Caption = ""
+        Me.chb_LaunchImmediately.Size = New System.Drawing.Size(182, 19)
+        ToolTipTitleItem19.Text = "Launch Immediately"
+        ToolTipItem16.LeftIndent = 6
+        ToolTipItem16.Text = "Activate this option and the next time a ROM file of the same type will be immedi" &
+    "ately launched with the current settings."
+        ToolTipTitleItem20.LeftIndent = 6
+        ToolTipTitleItem20.Text = "To override this option, hold the SHIFT key while opening RetroArch Quick Launche" &
+    "r with a ROM file."
+        SuperToolTip16.Items.Add(ToolTipTitleItem19)
+        SuperToolTip16.Items.Add(ToolTipItem16)
+        SuperToolTip16.Items.Add(ToolTipTitleItem20)
+        Me.chb_LaunchImmediately.SuperTip = SuperToolTip16
+        Me.chb_LaunchImmediately.TabIndex = 29
+        '
         'frm_Main
         '
         Me.AllowDrop = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(584, 161)
+        Me.ClientSize = New System.Drawing.Size(584, 183)
+        Me.Controls.Add(Me.chb_LaunchImmediately)
+        Me.Controls.Add(Me.lbl_LaunchImmediately)
         Me.Controls.Add(Me.lbl_Metropolis_Launcher)
         Me.Controls.Add(Me.btn_Cancel)
         Me.Controls.Add(Me.btn_OK)
@@ -469,14 +529,15 @@
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "RetroArch Quick Launcher v1.2.0 by MK2k"
         CType(Me.cmb_Libretro_Core.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BS_CurrentConfig, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BS_Libretro_Cores, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txb_RetroArch_Location.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmb_Retroarch_Shader.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BS_Shader, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txb_Game_Location.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txb_Patch_Location.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BS_CurrentConfig, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DS, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BS_Shader, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BS_Libretro_Cores, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chb_LaunchImmediately.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -501,6 +562,8 @@
 	Friend WithEvents BS_Libretro_Cores As BindingSource
 	Friend WithEvents BS_Shader As BindingSource
 	Friend WithEvents lbl_Metropolis_Launcher As MKNetDXLib.ctl_MKDXLabel
+    Friend WithEvents lbl_LaunchImmediately As MKNetDXLib.ctl_MKDXLabel
+    Friend WithEvents chb_LaunchImmediately As MKNetDXLib.ctl_MKDXCheckEdit
 
 #End Region
 

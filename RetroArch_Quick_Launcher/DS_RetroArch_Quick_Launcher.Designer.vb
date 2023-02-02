@@ -1189,6 +1189,8 @@ Partial Public Class DS_RetroArch_Quick_Launcher
         
         Private columnShader As Global.System.Data.DataColumn
         
+        Private columnLaunchImmediately As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -1249,6 +1251,14 @@ Partial Public Class DS_RetroArch_Quick_Launcher
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property LaunchImmediatelyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnLaunchImmediately
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1285,9 +1295,9 @@ Partial Public Class DS_RetroArch_Quick_Launcher
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function Addtbl_FileExtensionConfigRow(ByVal FileExtension As String, ByVal Libretro_Core As String, ByVal Shader As String) As tbl_FileExtensionConfigRow
+        Public Overloads Function Addtbl_FileExtensionConfigRow(ByVal FileExtension As String, ByVal Libretro_Core As String, ByVal Shader As String, ByVal LaunchImmediately As Boolean) As tbl_FileExtensionConfigRow
             Dim rowtbl_FileExtensionConfigRow As tbl_FileExtensionConfigRow = CType(Me.NewRow,tbl_FileExtensionConfigRow)
-            Dim columnValuesArray() As Object = New Object() {FileExtension, Libretro_Core, Shader}
+            Dim columnValuesArray() As Object = New Object() {FileExtension, Libretro_Core, Shader, LaunchImmediately}
             rowtbl_FileExtensionConfigRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowtbl_FileExtensionConfigRow)
             Return rowtbl_FileExtensionConfigRow
@@ -1313,6 +1323,7 @@ Partial Public Class DS_RetroArch_Quick_Launcher
             Me.columnFileExtension = MyBase.Columns("FileExtension")
             Me.columnLibretro_Core = MyBase.Columns("Libretro_Core")
             Me.columnShader = MyBase.Columns("Shader")
+            Me.columnLaunchImmediately = MyBase.Columns("LaunchImmediately")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1324,6 +1335,8 @@ Partial Public Class DS_RetroArch_Quick_Launcher
             MyBase.Columns.Add(Me.columnLibretro_Core)
             Me.columnShader = New Global.System.Data.DataColumn("Shader", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnShader)
+            Me.columnLaunchImmediately = New Global.System.Data.DataColumn("LaunchImmediately", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnLaunchImmediately)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnFileExtension}, false))
             Me.columnFileExtension.AllowDBNull = false
             Me.columnFileExtension.Unique = true
@@ -1726,6 +1739,22 @@ Partial Public Class DS_RetroArch_Quick_Launcher
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property LaunchImmediately() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tabletbl_FileExtensionConfig.LaunchImmediatelyColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'LaunchImmediately' in table 'tbl_FileExtensionConfig' is DB"& _ 
+                            "Null.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletbl_FileExtensionConfig.LaunchImmediatelyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsLibretro_CoreNull() As Boolean
             Return Me.IsNull(Me.tabletbl_FileExtensionConfig.Libretro_CoreColumn)
         End Function
@@ -1746,6 +1775,18 @@ Partial Public Class DS_RetroArch_Quick_Launcher
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetShaderNull()
             Me(Me.tabletbl_FileExtensionConfig.ShaderColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsLaunchImmediatelyNull() As Boolean
+            Return Me.IsNull(Me.tabletbl_FileExtensionConfig.LaunchImmediatelyColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetLaunchImmediatelyNull()
+            Me(Me.tabletbl_FileExtensionConfig.LaunchImmediatelyColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

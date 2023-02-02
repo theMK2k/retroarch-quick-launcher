@@ -41,11 +41,6 @@ Partial Public Class frm_Main
 
         Dim cmdArgs = Environment.GetCommandLineArgs()
         For i As Integer = 1 To cmdArgs.Length - 1
-            If cmdArgs(i) = "--launch-immediately" Then
-                Me.launchImmediately = True
-                Continue For
-            End If
-
             Me.ImportFile(cmdArgs(i), enm_ImportFileMode.AUTODETECT)
         Next
     End Sub
@@ -236,6 +231,7 @@ Partial Public Class frm_Main
 
         Me.BS_CurrentConfig.Current("Libretro_Core") = rows(0)("Libretro_Core")
         Me.BS_CurrentConfig.Current("Shader") = rows(0)("Shader")
+        Me.chb_LaunchImmediately.Checked = TC.NZ(rows(0)("LaunchImmediately"), False)
     End Sub
 
     Private Sub save_FileExtensionConfig()
@@ -256,6 +252,7 @@ Partial Public Class frm_Main
         row.FileExtension = FileExtension
         row("Libretro_Core") = Me.cmb_Libretro_Core.EditValue
         row("Shader") = Me.cmb_Retroarch_Shader.EditValue
+        row("LaunchImmediately") = Me.chb_LaunchImmediately.Checked
 
         If isNew Then
             Me.DS.tbl_FileExtensionConfig.Rows.Add(row)
@@ -423,7 +420,7 @@ Partial Public Class frm_Main
 	End Sub
 
     Private Sub frm_Main_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        If Me.launchImmediately Then
+        If Me.chb_LaunchImmediately.Checked AndAlso Not My.Computer.Keyboard.ShiftKeyDown Then
             'Me.Visible = False
             Me.btn_OK_Click(Me.btn_OK, New EventArgs)
         End If

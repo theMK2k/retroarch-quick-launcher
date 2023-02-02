@@ -4,8 +4,6 @@
 
 If you choose **RetroArch Quick Launcher** as the default application for your ROM files, you'll see its dialog after double clicking your ROM file and by the press of the **OK** button or simply pressing **ENTER**, RetroArch is launched.
 
-Alternatively choose **RetroArch_Quick_Launcher (launch immediately).bat** as the default application for your ROM files to skip the dialog and directly launch the ROM file. If something isn't set up correctly (e.g. Libretro Core not selected), the dialog will not be skipped.
-
 ![screenshot of RetroArch Quick Launcher's dialog](docs/screenshot.png "Title")
 
 ## Installation
@@ -15,26 +13,35 @@ Download the latest release from the [Releases section](https://github.com/theMK
 ## Features / Usage
 
 - Game Location (the ROM file):
+
   - run **RetroArch Quick Launcher** with the ROM file as command line parameter
   - let **RetroArch Quick Launcher** be the default application for the ROM file and double click or press **ENTER** on the file in Explorer
   - drag/drop the ROM file in the text box
   - use the browse button ![browse button](docs/browse-button.png "browse button")
 
 - RetroArch Location:
+
   - **RetroArch Quick Launcher** stores the RetroArch location, so you only need to provide it once
   - drag/drop retroarch.exe in the text box
   - use the browse button ![browse button](docs/browse-button.png "browse button")
 
 - Libretro Core:
+
   - **RetroArch Quick Launcher** stores the selected core per ROM file type, so you only need to select it once per platform
   - use the dropdown list and select the Libretro core you want to use for your ROM file
 
 - Shader (optional):
+
   - **RetroArch Quick Launcher** stores the selected shader per ROM file type, so you only need to select it once per platform
   - use the dropdown list and select the shader of your choice
 
 - Patch Location (optional):
+
   - Supported patch file formats: `.ips`, `.ups` and `.bps`
   - run **RetroArch Quick Launcher** with the patch file as another command line parameter
   - drag/drop the patch file in the text box
   - use the browse button ![browse button](docs/browse-button.png "browse button")
+
+- Launch Immediately:
+  - activate this option and the next time a ROM file of the same type will be immediately launched with the current settings
+  - To override this option, hold the SHIFT key while opening **RetroArch Quick Launcher** with a ROM file
