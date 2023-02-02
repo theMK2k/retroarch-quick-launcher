@@ -77,11 +77,15 @@
         Dim ToolTipTitleItem20 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Main))
         Me.cmb_Libretro_Core = New MKNetDXLib.ctl_MKDXLookupEdit()
+        Me.BS_CurrentConfig = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DS = New RetroArch_Quick_Launcher.DS_RetroArch_Quick_Launcher()
+        Me.BS_Libretro_Cores = New System.Windows.Forms.BindingSource(Me.components)
         Me.lbl_Libretro_Core = New MKNetDXLib.ctl_MKDXLabel()
         Me.lbl_Executable = New MKNetDXLib.ctl_MKDXLabel()
         Me.txb_RetroArch_Location = New MKNetDXLib.ctl_MKDXTextEdit()
         Me.btn_Browse_RetroArch = New MKNetDXLib.ctl_MKDXSimpleButton()
         Me.cmb_Retroarch_Shader = New MKNetDXLib.ctl_MKDXLookupEdit()
+        Me.BS_Shader = New System.Windows.Forms.BindingSource(Me.components)
         Me.lbl_Retroarch_Shader = New MKNetDXLib.ctl_MKDXLabel()
         Me.lbl_Game_Location = New MKNetDXLib.ctl_MKDXLabel()
         Me.txb_Game_Location = New MKNetDXLib.ctl_MKDXTextEdit()
@@ -92,21 +96,17 @@
         Me.btn_OK = New MKNetDXLib.ctl_MKDXSimpleButton()
         Me.btn_Cancel = New MKNetDXLib.ctl_MKDXSimpleButton()
         Me.lbl_Metropolis_Launcher = New MKNetDXLib.ctl_MKDXLabel()
-        Me.BS_CurrentConfig = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DS = New RetroArch_Quick_Launcher.DS_RetroArch_Quick_Launcher()
-        Me.BS_Shader = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BS_Libretro_Cores = New System.Windows.Forms.BindingSource(Me.components)
         Me.lbl_LaunchImmediately = New MKNetDXLib.ctl_MKDXLabel()
         Me.chb_LaunchImmediately = New MKNetDXLib.ctl_MKDXCheckEdit()
         CType(Me.cmb_Libretro_Core.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txb_RetroArch_Location.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmb_Retroarch_Shader.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txb_Game_Location.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txb_Patch_Location.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BS_CurrentConfig, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BS_Shader, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BS_Libretro_Cores, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txb_RetroArch_Location.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmb_Retroarch_Shader.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BS_Shader, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txb_Game_Location.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txb_Patch_Location.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chb_LaunchImmediately.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -136,7 +136,23 @@
         SuperToolTip1.Items.Add(ToolTipTitleItem1)
         SuperToolTip1.Items.Add(ToolTipItem1)
         Me.cmb_Libretro_Core.SuperTip = SuperToolTip1
-        Me.cmb_Libretro_Core.TabIndex = 4
+        Me.cmb_Libretro_Core.TabIndex = 6
+        '
+        'BS_CurrentConfig
+        '
+        Me.BS_CurrentConfig.DataMember = "tbl_CurrentConfig"
+        Me.BS_CurrentConfig.DataSource = Me.DS
+        '
+        'DS
+        '
+        Me.DS.DataSetName = "DS_RetroArch_Quick_Launcher"
+        Me.DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BS_Libretro_Cores
+        '
+        Me.BS_Libretro_Cores.DataMember = "tbl_Libretro_Cores"
+        Me.BS_Libretro_Cores.DataSource = Me.DS
+        Me.BS_Libretro_Cores.Sort = "Displayname"
         '
         'lbl_Libretro_Core
         '
@@ -205,7 +221,7 @@
         SuperToolTip4.Items.Add(ToolTipItem4)
         SuperToolTip4.Items.Add(ToolTipTitleItem5)
         Me.txb_RetroArch_Location.SuperTip = SuperToolTip4
-        Me.txb_RetroArch_Location.TabIndex = 3
+        Me.txb_RetroArch_Location.TabIndex = 4
         '
         'btn_Browse_RetroArch
         '
@@ -219,7 +235,7 @@
         SuperToolTip5.Items.Add(ToolTipTitleItem6)
         SuperToolTip5.Items.Add(ToolTipItem5)
         Me.btn_Browse_RetroArch.SuperTip = SuperToolTip5
-        Me.btn_Browse_RetroArch.TabIndex = 15
+        Me.btn_Browse_RetroArch.TabIndex = 5
         Me.btn_Browse_RetroArch.Text = "..."
         '
         'cmb_Retroarch_Shader
@@ -247,7 +263,13 @@
         SuperToolTip6.Items.Add(ToolTipTitleItem7)
         SuperToolTip6.Items.Add(ToolTipItem6)
         Me.cmb_Retroarch_Shader.SuperTip = SuperToolTip6
-        Me.cmb_Retroarch_Shader.TabIndex = 5
+        Me.cmb_Retroarch_Shader.TabIndex = 7
+        '
+        'BS_Shader
+        '
+        Me.BS_Shader.DataMember = "tbl_Shader"
+        Me.BS_Shader.DataSource = Me.DS
+        Me.BS_Shader.Sort = "Path"
         '
         'lbl_Retroarch_Shader
         '
@@ -326,7 +348,7 @@
         SuperToolTip10.Items.Add(ToolTipTitleItem12)
         SuperToolTip10.Items.Add(ToolTipItem10)
         Me.btn_Browse_Game.SuperTip = SuperToolTip10
-        Me.btn_Browse_Game.TabIndex = 24
+        Me.btn_Browse_Game.TabIndex = 3
         Me.btn_Browse_Game.Text = "..."
         '
         'btn_Browse_Patch
@@ -341,7 +363,7 @@
         SuperToolTip11.Items.Add(ToolTipTitleItem13)
         SuperToolTip11.Items.Add(ToolTipItem11)
         Me.btn_Browse_Patch.SuperTip = SuperToolTip11
-        Me.btn_Browse_Patch.TabIndex = 27
+        Me.btn_Browse_Patch.TabIndex = 9
         Me.btn_Browse_Patch.Text = "..."
         '
         'lbl_Patch_Location
@@ -384,7 +406,7 @@
         SuperToolTip13.Items.Add(ToolTipItem13)
         SuperToolTip13.Items.Add(ToolTipTitleItem16)
         Me.txb_Patch_Location.SuperTip = SuperToolTip13
-        Me.txb_Patch_Location.TabIndex = 6
+        Me.txb_Patch_Location.TabIndex = 8
         '
         'btn_OK
         '
@@ -423,30 +445,8 @@
     "ll blown game and emulation launcher"
         SuperToolTip14.Items.Add(ToolTipItem14)
         Me.lbl_Metropolis_Launcher.SuperTip = SuperToolTip14
-        Me.lbl_Metropolis_Launcher.TabIndex = 7
+        Me.lbl_Metropolis_Launcher.TabIndex = 10
         Me.lbl_Metropolis_Launcher.Text = "Need a proper gaming frontend? Check out Metropolis Launcher."
-        '
-        'BS_CurrentConfig
-        '
-        Me.BS_CurrentConfig.DataMember = "tbl_CurrentConfig"
-        Me.BS_CurrentConfig.DataSource = Me.DS
-        '
-        'DS
-        '
-        Me.DS.DataSetName = "DS_RetroArch_Quick_Launcher"
-        Me.DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'BS_Shader
-        '
-        Me.BS_Shader.DataMember = "tbl_Shader"
-        Me.BS_Shader.DataSource = Me.DS
-        Me.BS_Shader.Sort = "Path"
-        '
-        'BS_Libretro_Cores
-        '
-        Me.BS_Libretro_Cores.DataMember = "tbl_Libretro_Cores"
-        Me.BS_Libretro_Cores.DataSource = Me.DS
-        Me.BS_Libretro_Cores.Sort = "Displayname"
         '
         'lbl_LaunchImmediately
         '
@@ -529,14 +529,14 @@
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "RetroArch Quick Launcher v1.2.0 by MK2k"
         CType(Me.cmb_Libretro_Core.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txb_RetroArch_Location.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmb_Retroarch_Shader.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txb_Game_Location.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txb_Patch_Location.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BS_CurrentConfig, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BS_Shader, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BS_Libretro_Cores, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txb_RetroArch_Location.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmb_Retroarch_Shader.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BS_Shader, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txb_Game_Location.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txb_Patch_Location.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chb_LaunchImmediately.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
